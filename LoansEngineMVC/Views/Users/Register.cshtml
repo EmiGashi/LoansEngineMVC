@@ -1,0 +1,65 @@
+﻿@model LoansEngineMVC.Dtos.AddUserViewModel
+
+<h1>Register</h1>
+<form method="post" asp-action="Register" class="mt-5 row" class="bg-danger">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="mb-3">
+
+        <select asp-for="Webinar" asp-items="Html.GetEnumSelectList<Webinars>()">
+            <option value="">Please Select Any </option>
+        </select>
+        <span asp-validation-for="Webinar" class="text-danger"></span>
+
+    </div>
+ @*    <div class="mb-3"> *@
+        <div class="col-md-6 form-group">
+            <label for="FirstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" asp-for="FirstName" >
+           @*  <input type="text" class="form-control" asp-for="FirstName" data-val="true" data-val-required="Please enter your first name ....should be less than 50 characters"> *@
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 form-group">
+
+        <label for="LastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" asp-for="LastName" >
+       @*  <input type="text" class="form-control" asp-for="LastName" data-val="true" data-val-required="Please enter your last name ....should be less than 50 characters"> *@
+        <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+@*     </div> *@
+
+    <div class="col-md-3 position-relative">
+
+    </div>
+    <div class="mb-3">
+        <label for="EmailAddress" class="form-label">Email Address</label>
+        <input type="email" class="form-control" asp-for="EmailAddress" >
+        @* <input type="email" class="form-control" asp-for="EmailAddress" data-val="true" data-val-required="Please enter your valid email address ...."> *@
+        <span asp-validation-for="EmailAddress" class="text-danger"></span>
+
+    </div>
+   @*  <div class="mb-3"> *@
+    <div class="col-md-6 form-group">
+        <label for="Company" class="form-label">Company</label>
+        <input type="text" class="form-control" asp-for="Company">
+
+    </div>
+@*     </div> *@
+    @* <div class="mb-3"> *@
+    <div class="col-md-6 form-group">
+
+        <label for="Title" class="form-label">Title</label>
+        <input type="text" class="form-control" asp-for="Title">
+    </div>
+    @* </div> *@
+    <div class="mb-3">
+        <label for="Comment" class="form-label">Comment</label>
+        <textarea class="form-control" rows="5" asp-for="Comment"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

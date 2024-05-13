@@ -1,0 +1,45 @@
+﻿@model LoansEngineMVC.Dtos.UpdateUserViewModel
+
+<h1>Edit User</h1>
+
+<form method="POST" action="UpdateUser" class="mt-5">
+    <div class="mb-3">
+        <label for="Id" class="form-label">Id</label>
+        <input type="text" class="form-control" asp-for="Id" readonly />
+    </div>
+    <div class="mb-3">
+        <label for="FirstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" asp-for="FirstName" />
+    </div>
+    <div class="mb-3">
+        <label for="LastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" asp-for="LastName" />
+    </div>
+    <div class="mb-3">
+        <label for="EmaiAddress" class="form-label">Email Address</label>
+        <input type="email" class="form-control" asp-for="EmailAddress" />
+    </div>
+    <div class="mb-3">
+        <label for="Company" class="form-label">Company</label>
+        <input type="text" class="form-control" asp-for="Company" />
+    </div>
+    <div class="mb-3">
+        <label for="Title" class="form-label">Title</label>
+        <input type="text" class="form-control" asp-for="Title" />
+    </div>
+    <div class="mb-3">
+        <label for="Comment" class="form-label">Comment</label>
+        <input type="text" class="form-control" asp-for="Comment" />
+    </div>
+    <div class="mb-3">
+        <label for="Webinar" class="form-label">Webinar</label>
+        <input type="text" class="form-control" asp-for="Webinar" />
+    </div>
+
+    <button type="submit" class="btn btn-primary" asp-action="UpdateUser">Submit</button>
+    <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Users">Delete</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
